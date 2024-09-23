@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería con Selector</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-light bg-light">
+        <div class="container-fluid">
+            <!-- Logotipo de Instagram con texto -->
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <i class="bi bi-instagram" style="font-size: 1.5rem; margin-right: 0.5rem;"></i>
+                Instagram
+            </a>
+            <!-- Botón "Create a new post" y Dropdown -->
+            <div class="d-flex">
+                <button class="btn btn-success me-2" type="button" data-bs-toggle="modal" data-bs-target="#newPostModal">
+                    Create a new post
+                </button>
+                <!-- Dropdown -->
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-gear"></i>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Accessibility</a></li>
+                        <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Selector de Vista -->
+    <div class="container my-4">
+        <div class="d-flex justify-content-center">
+            <button id="gridViewBtn" class="btn btn-outline-primary mx-2">Grid View</button>
+            <button id="listViewBtn" class="btn btn-outline-primary mx-2">List View</button>
+        </div>
+    </div>
+
+    <!-- Galería de Imágenes -->
+    <div id="gallery" class="container grid-view">
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <img src="https://via.placeholder.com/600x400" alt="Imagen 1" class="img-fluid">
+            </div>
+            <div class="col-md-4 mb-3">
+                <img src="https://via.placeholder.com/600x400" alt="Imagen 2" class="img-fluid">
+            </div>
+            <div class="col-md-4 mb-3">
+                <img src="https://via.placeholder.com/600x400" alt="Imagen 3" class="img-fluid">
+            </div>
+            <div class="col-md-4 mb-3">
+                <img src="https://via.placeholder.com/600x400" alt="Imagen 4" class="img-fluid">
+            </div>
+            <div class="col-md-4 mb-3">
+                <img src="https://via.placeholder.com/600x400" alt="Imagen 5" class="img-fluid">
+            </div>
+            <div class="col-md-4 mb-3">
+                <img src="https://via.placeholder.com/600x400" alt="Imagen 6" class="img-fluid">
+            </div>
+            <!-- Nueva fila de imágenes -->
+            <div class="col-md-4 mb-3">
+                <img src="https://via.placeholder.com/600x400" alt="Imagen 7" class="img-fluid">
+            </div>
+            <div class="col-md-4 mb-3">
+                <img src="https://via.placeholder.com/600x400" alt="Imagen 8" class="img-fluid">
+            </div>
+            <div class="col-md-4 mb-3">
+                <img src="https://via.placeholder.com/600x400" alt="Imagen 9" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para crear un nuevo post -->
+    <div class="modal fade" id="newPostModal" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="newPostModalLabel">Create a new post</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="postCaption" class="form-label">Caption</label>
+                            <textarea class="form-control" id="postCaption" placeholder="Add the caption of your post here"></textarea>
+                        </div>
+                        <div class="mb-3 d-flex align-items-center">
+                            <!-- Icono de la cámara para subir imagen -->
+                            <label for="postImage" class="form-label">
+                                <i class="bi bi-camera" style="font-size: 2rem; cursor: pointer;"></i>
+                            </label>
+                            <input type="file" class="d-none" id="postImage">
+                            <!-- Espaciado entre iconos -->
+                            <span class="mx-2"></span>
+                            <!-- Icono de localización -->
+                            <i class="bi bi-geo-alt" style="font-size: 2rem; cursor: pointer;"></i>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!-- Cambiado el color del botón "Publish" a verde -->
+                    <button type="button" class="btn btn-success">Publish</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS y Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Elementos de vista
+        const gallery = document.getElementById('gallery');
+        const gridViewBtn = document.getElementById('gridViewBtn');
+        const listViewBtn = document.getElementById('listViewBtn');
+
+        // Cambiar a vista de cuadrícula
+        gridViewBtn.addEventListener('click', function () {
+            gallery.classList.add('grid-view');
+            gallery.classList.remove('list-view');
+        });
+
+        // Cambiar a vista de lista
+        listViewBtn.addEventListener('click', function () {
+            gallery.classList.add('list-view');
+            gallery.classList.remove('grid-view');
+        });
+    </script>
+</body>
+</html>
