@@ -1,3 +1,4 @@
+/* Estilo para la vista de cuadrícula */
 .grid-view .col-md-4 {
     flex: 0 0 33.333333%;
     max-width: 33.333333%;
@@ -8,13 +9,23 @@
     height: auto;
 }
 
-/* Estilos para la vista de lista (List View) */
+/* Estilo para la vista de lista */
 .list-view .col-md-4 {
     flex: 0 0 100%;
     max-width: 100%;
+    display: flex; /* Usar flexbox para centrar */
+    justify-content: center; /* Centrar el contenido horizontalmente */
 }
 
 .list-view img {
-    width: 100%;
-    height: auto;
+    width: 600px;
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Estilo general para las imágenes en la galería */
+#gallery img {
+    width: 600px;
+    height: 400px;
+    object-fit: cover;
 }
