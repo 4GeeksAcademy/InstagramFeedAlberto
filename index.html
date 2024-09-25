@@ -8,36 +8,40 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-light bg-light">
+    <!-- Navbar con toggler -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <!-- Logotipo de Instagram con texto -->
             <a class="navbar-brand d-flex align-items-center" href="#">
                 <i class="bi bi-instagram" style="font-size: 1.5rem; margin-right: 0.5rem;"></i>
                 Instagram
             </a>
-            <!-- Botón "Create a new post" y Dropdown -->
-            <div class="d-flex">
-                <button class="btn btn-success me-2" type="button" data-bs-toggle="modal" data-bs-target="#newPostModal">
-                    Create a new post
-                </button>
-                <!-- Dropdown -->
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-                        <i class="bi bi-gear"></i>
+            <!-- Toggler para dispositivos móviles -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Botón "Create a new post" y Dropdown -->
+                <div class="d-flex ms-auto">
+                    <button class="btn btn-success me-2" type="button" data-bs-toggle="modal" data-bs-target="#newPostModal">
+                        Create a new post
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Accessibility</a></li>
-                        <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
-                    </ul>
+                    <!-- Dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-gear"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#">Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Accessibility</a></li>
+                            <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item text-danger" href="#">Log out</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -57,36 +61,37 @@
         </div>
     </div>
 
-    <!-- Galería de Imágenes -->
-    <div id="gallery" class="container grid-view">
+    <!-- Galería de Imágenes con grid responsive -->
+    <div id="gallery" class="container">
         <div class="row">
-            <div class="col-md-4 mb-3">
-                <img src="https://desguacelamina.com/blog/wp-content/uploads/2022/01/audi-quattro-rally-nieve.jpg" alt="Imagen 1" class="img-fluid">
+            <!-- Cada columna se ajusta a 3x3 en pantallas grandes (col-lg-4), 2x2 en medianas (col-md-6), y 1x1 en pequeñas (col-12) -->
+            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                <img src="https://desguacelamina.com/blog/wp-content/uploads/2022/01/audi-quattro-rally-nieve.jpg" style="width: 600px; height: 400px; object-fit: cover;" alt="Imagen 1" class="img-fluid">
             </div>
-            <div class="col-md-4 mb-3">
-                <img src="https://www.tiendanimal.es/articulos/wp-content/uploads/2017/11/Como-educar-y-entrenar-a-un-pastor-aleman-1200x900.jpg" alt="Imagen 2" class="img-fluid">
+            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                <img src="https://www.tiendanimal.es/articulos/wp-content/uploads/2017/11/Como-educar-y-entrenar-a-un-pastor-aleman-1200x900.jpg" style="width: 600px; height: 400px; object-fit: cover;" alt="Imagen 2" class="img-fluid">
             </div>
-            <div class="col-md-4 mb-3">
-                <img src="https://concepto.de/wp-content/uploads/2015/03/paisaje-800x409.jpg" alt="Imagen 3" class="img-fluid">
+            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                <img src="https://concepto.de/wp-content/uploads/2015/03/paisaje-800x409.jpg" style="width: 600px; height: 400px; object-fit: cover;" alt="Imagen 3" class="img-fluid">
             </div>
-            <div class="col-md-4 mb-3">
-                <img src="https://media.gq.com.mx/photos/620e915c43f71a078a35533f/master/pass/playa.jpg" alt="Imagen 4" class="img-fluid">
+            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                <img src="https://media.gq.com.mx/photos/620e915c43f71a078a35533f/master/pass/playa.jpg" style="width: 600px; height: 400px; object-fit: cover;" alt="Imagen 4" class="img-fluid">
             </div>
-            <div class="col-md-4 mb-3">
-                <img src="https://i0.wp.com/www3.gobiernodecanarias.org/medusa/ecoblog/crodalf/files/2022/03/montana-1.jpg?resize=621%2C414&ssl=1" alt="Imagen 5" class="img-fluid">
+            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                <img src="https://i0.wp.com/www3.gobiernodecanarias.org/medusa/ecoblog/crodalf/files/2022/03/montana-1.jpg?resize=621%2C414&ssl=1" style="width: 600px; height: 400px; object-fit: cover;" alt="Imagen 5" class="img-fluid">
             </div>
-            <div class="col-md-4 mb-3">
-                <img src="https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2021/04/07/cachorro-perro.jpeg" alt="Imagen 6" class="img-fluid">
+            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                <img src="https://imagenes.20minutos.es/files/image_1920_1080/uploads/imagenes/2021/04/07/cachorro-perro.jpeg" style="width: 600px; height: 400px; object-fit: cover;" alt="Imagen 6" class="img-fluid">
             </div>
             <!-- Nueva fila de imágenes -->
-            <div class="col-md-4 mb-3">
-                <img src="https://www.reykjavikcars.com/assets/img/blog/702.png" alt="Imagen 7" class="img-fluid">
+            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                <img src="https://www.reykjavikcars.com/assets/img/blog/702.png" style="width: 600px; height: 400px; object-fit: cover;" alt="Imagen 7" class="img-fluid">
             </div>
-            <div class="col-md-4 mb-3">
-                <img src="https://files-cdn.vitaminw.no/8dc2980fe6b54ce79a491df52cb663f1/Root/2022/April/1985+Toyota+Celica+Supra/celicasupra1.jpg/celicasupra1-fullskjerm.jpg?ts=637868158154274278" alt="Imagen 8" class="img-fluid">
+            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                <img src="https://files-cdn.vitaminw.no/8dc2980fe6b54ce79a491df52cb663f1/Root/2022/April/1985+Toyota+Celica+Supra/celicasupra1.jpg/celicasupra1-fullskjerm.jpg?ts=637868158154274278" style="width: 600px; height: 400px; object-fit: cover;" alt="Imagen 8" class="img-fluid">
             </div>
-            <div class="col-md-4 mb-3">
-                <img src="https://cdn.shopify.com/s/files/1/0268/6861/files/CACHORROS_grande.jpg?v=1531512258" alt="Imagen 9" class="img-fluid">
+            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                <img src="https://cdn.shopify.com/s/files/1/0268/6861/files/CACHORROS_grande.jpg?v=1531512258" style="width: 600px; height: 400px; object-fit: cover;" alt="Imagen 9" class="img-fluid">
             </div>
         </div>
     </div>
@@ -137,14 +142,20 @@
 
         // Cambiar a vista de cuadrícula
         gridViewBtn.addEventListener('click', function () {
-            gallery.classList.add('grid-view');
-            gallery.classList.remove('list-view');
+            const images = gallery.querySelectorAll('.col-lg-4, .col-md-6, .col-12');
+            images.forEach(image => {
+                image.classList.remove('col-12', 'd-flex', 'justify-content-center');
+                image.classList.add('col-lg-4', 'col-md-6');
+            });
         });
 
-        // Cambiar a vista de lista
+        // Cambiar a vista de lista y centrar las imágenes
         listViewBtn.addEventListener('click', function () {
-            gallery.classList.add('list-view');
-            gallery.classList.remove('grid-view');
+            const images = gallery.querySelectorAll('.col-lg-4, .col-md-6, .col-12');
+            images.forEach(image => {
+                image.classList.remove('col-lg-4', 'col-md-6');
+                image.classList.add('col-12', 'd-flex', 'justify-content-center');
+            });
         });
     </script>
 </body>
